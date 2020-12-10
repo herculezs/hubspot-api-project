@@ -1,0 +1,30 @@
+{
+  "name": "hubspot-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "blog.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stephanie Berkebile",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "hubspot": "^2.3.14",
+    "moment": "^2.29.1",
+    "pug": "^3.0.0",
+    "session-file-store": "^1.5.0",
+    "string.prototype.matchall": "^4.0.3",
+    "uglify-js": "^3.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

@@ -1,0 +1,32 @@
+extends layout
+
+block layout-content
+  - var title = 'Blog'
+  - var notHome = true
+  include includes/navbar.pug
+
+  form(method='post', action='/blog')
+    div
+      label(for='selectPage', style='display:block;margin-bottom:10px') Add blog post IDs to update (Leave it blank if you want to update all posts):
+      textarea(id='selectPage', name='postIds', placeholder='e.g 5341189786, 5341189787, 5341189788', style='width: 400px;height: 50px')
+      p(style='margin:0;padding:10px;background-color:lightgoldenrodyellow;border:1px solid #aaa') Extract blog post ID from post content edit page. For example, post ID of <a href="https://app.hubspot.com/blog/67369/edit-beta/1092905951/content" target="_blank">https://app.hubspot.com/blog/67369/edit-beta/1092905951/content</a> is <strong>1092905951</strong>.
+    fieldset(style='margin-top:10px')
+      legend The following options are used only when you leave the field above blank.
+      div
+        label(for='startDate', style='display:block;margin:10px 0') Start date to filter (Leave it blank if you don't want to specify)
+        input(id='startDate', type='date', name='startDate')
+      div
+        label(for='endDate', style='display:block;margin:10px 0') End date to filter (Leave it blank if you don't want to specify)
+        input(id='endDate', type='date', name='endDate')
+      div
+        p Update blogs that were created or updated during the period above? (This option won't be applied if none of the date options is selected)
+        label(for='created') Created:
+        input(id='created', type='radio', name='type', value='created', checked, style='margin-right: 40px')
+        label(for='updated') Updated:
+        input(id='updated', type='radio', name='type', value='updated')
+    button(type='submit', style='margin-top:20px') Update now
+
+block custom-script
+  if message != ''
+    script.
+      alert('#{message}')

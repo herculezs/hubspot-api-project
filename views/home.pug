@@ -1,0 +1,13 @@
+extends layout
+
+block layout-content
+  - var title = 'Select page type'
+  include includes/navbar.pug
+  
+  ul
+    li
+      a(href='/blog') Blog
+    li
+      a(href='/video-library') Video Library
+    li
+      a(href='/sitepage') Website

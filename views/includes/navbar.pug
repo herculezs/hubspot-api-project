@@ -1,0 +1,6 @@
+nav(style='display:flex;align-items:center')
+  if title != ''
+    h1(style='margin-right: 20px') #{title}
+  if notHome
+    a(href='/', style='margin-right: 20px') Home
+  a(href='/logout') Log out
